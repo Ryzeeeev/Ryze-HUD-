@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --card-border: rgba(255, 255, 255, 0.1);
+}
+
+.dark {
+  --card-border: rgba(255, 255, 255, 0.1);
+}
+
+.light {
+  --card-border: rgba(0, 0, 0, 0.1);
+}
+
+.game-card {
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--card-border);
+  transition: all 0.3s ease;
+}
+
+.game-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: transparent !important;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.animate-pulse-slow {
+  animation: pulse 3s infinite ease-in-out;
+}
